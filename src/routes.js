@@ -14,7 +14,7 @@ const routes = [
         element: ProductDetail,
         isNav: false,
     },
-    { title: 'Ürün Ara', path: 'arama', element: ProductSearch, isNav: true },
+    { title: 'Ürün Ara', path: 'arama', element: ProductSearch, isNav: false },
 ];
 
 export default routes;
