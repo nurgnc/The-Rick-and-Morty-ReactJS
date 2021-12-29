@@ -12,3 +12,11 @@ p {
   height: auto;
   object-fit: contain;
 }
+
+.img-avatar {
+  border-radius: 50%;
+}
+
+.text-orange {
+  color: #FB943C;
+}

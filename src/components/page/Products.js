@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BASE_URL from '../../api'
+import '../../style.css'
 //icons
 import { GiPerson } from 'react-icons/gi';
 import { BsFillRecordFill } from 'react-icons/bs'
 import { RiAliensFill } from 'react-icons/ri'
 
 function Products(props) {
-    const [products, setProducts] = useState([]);
+    const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const setStatus = (item) => {
@@ -34,7 +35,7 @@ function Products(props) {
             .then(results => {
                 const data = results.results;
                 setLoading(false);
-                setProducts(data);
+                setCharacters(data);
             });
     }, []);
 
@@ -54,10 +55,10 @@ function Products(props) {
                 </thead>
                 <tbody>
                     {
-                        products.map(item => (
+                        characters.map(item => (
                             <tr key={item.id}>
                                 <td className="w-25">
-                                    <img src={item.image} className="avatar rounded" alt={item.name} />
+                                    <img src={item.image} className="avatar img-avatar" alt={item.name} />
                                 </td>
                                 <td><Link className="text-decoration-none fw-bold text-info" to={`${item.id}`}>{item.name}</Link></td>
                                 <td className={setStatus(item)}>
