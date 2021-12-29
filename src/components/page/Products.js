@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import BASE_URL from '../../api'
 //icons
 import { GiPerson } from 'react-icons/gi';
-import { CgEditBlackPoint } from 'react-icons/cg'
+import { BsFillRecordFill } from 'react-icons/bs'
 import { RiAliensFill } from 'react-icons/ri'
 
 function Products(props) {
@@ -61,7 +61,7 @@ function Products(props) {
                                 </td>
                                 <td><Link className="text-decoration-none fw-bold text-info" to={`${item.id}`}>{item.name}</Link></td>
                                 <td className={setStatus(item)}>
-                                    <CgEditBlackPoint className={setStatus(item)} />
+                                    <BsFillRecordFill className={setStatus(item)} />
                                     {item.status}</td>
                                 <td className='text-center'>{setSpecies(item)}</td>
                             </tr>

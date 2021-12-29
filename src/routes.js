@@ -7,9 +7,9 @@ import ProductSearch from './components/page/ProductSearch';
 const routes = [
     { title: 'Ana Sayfa', path: '/', element: Home, isNav: true },
     { title: 'Hakkımızda', path: 'about', element: About, isNav: true },
-    { title: 'Ürünler', path: 'products', element: Products, isNav: true },
+    { title: 'Karakterler', path: 'products', element: Products, isNav: true },
     {
-        title: 'Ürün Detay',
+        title: 'Karakter Özellikleri',
         path: 'products/:productId',
         element: ProductDetail,
         isNav: false,

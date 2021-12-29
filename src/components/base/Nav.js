@@ -8,7 +8,9 @@ export default function Nav() {
         <div className='bg-yellow'>
             <nav className="navbar px-5 navbar-expand-lg navbar-light ">
                 <div className="container-fluid">
+                    <Link to="/">
                     <img src={require('../../img/logo.png')} alt="logo" />
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
