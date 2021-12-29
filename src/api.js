@@ -1,3 +1,3 @@
-const BASE_URL = 'https://zoo-animal-api.herokuapp.com/animals/rand'
+const BASE_URL = 'https://rickandmortyapi.com/api/character'
 
 export default BASE_URL
