@@ -1,1 +1,1 @@
-# Animals-ReactJS
+# The-Rick-and-Morty-ReactJS
