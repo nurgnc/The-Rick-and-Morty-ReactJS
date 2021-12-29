@@ -1,3 +1,14 @@
-h1, p {
+h1,
+p {
   font-family: Lato;
+}
+
+.bg-yellow {
+  background: #FFFD9C;
+}
+
+.avatar {
+  width: 30%;
+  height: auto;
+  object-fit: contain;
 }
