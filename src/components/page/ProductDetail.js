@@ -23,8 +23,8 @@ export default function ProductDetail() {
     }
 
     useEffect(() => {
-        const { productId } = params;
-        fetch(`${BASE_URL}/${productId}`)
+        const { characterId } = params;
+        fetch(`${BASE_URL}/${characterId}`)
             .then((response) => response.json())
             .then(results => {
                 setProducts(results);

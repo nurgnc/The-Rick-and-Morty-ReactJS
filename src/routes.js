@@ -5,16 +5,16 @@ import About from './components/page/About';
 import ProductSearch from './components/page/ProductSearch';
 
 const routes = [
-    { title: 'Ana Sayfa', path: '/', element: Home, isNav: true },
-    { title: 'Hakkımızda', path: 'about', element: About, isNav: true },
-    { title: 'Karakterler', path: 'products', element: Products, isNav: true },
+    { title: 'Home', path: '/', element: Home, isNav: true },
+    { title: 'About', path: 'about', element: About, isNav: true },
+    { title: 'Characters', path: 'characters', element: Products, isNav: true },
     {
-        title: 'Karakter Özellikleri',
-        path: 'products/:productId',
+        title: 'Character Detail',
+        path: 'characters/:characterId',
         element: ProductDetail,
         isNav: false,
     },
-    { title: 'Ürün Ara', path: 'arama', element: ProductSearch, isNav: false },
+    { title: 'Character Search', path: 'search', element: ProductSearch, isNav: false },
 ];
 
 export default routes;
