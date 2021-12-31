@@ -7,7 +7,7 @@ export default function Nav() {
     return (
         <div className='bg-yellow'>
             <nav className="navbar px-5 navbar-expand-lg navbar-light ">
-                <div className="container-fluid">
+                <div className="col-12 d-flex flex-row align-items-center justify-content-between">
                     <Link to="/">
                     <img src={require('../../img/logo.png')} alt="logo" />
                     </Link>
@@ -20,7 +20,7 @@ export default function Nav() {
                                 .filter((item) => item.isNav)
                                 .map((item, index) => (
                                     <div key={index} className="nav-item px-3 ">
-                                        <Link  to={item.path} className="text-info text-decoration-none">
+                                        <Link  to={item.path} className="text-info fw-bold text-decoration-none">
                                             {item.title}
                                         </Link>
                                     </div>
