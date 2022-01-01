@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BASE_URL from '../../api'
-import ProductSearch from './ProductSearch'
+import CharacterSearch from './CharacterSearch'
 import { Link } from 'react-router-dom';
 import '../../style.css'
 import CharacterCard from '../base/CharacterCard';
@@ -22,7 +22,7 @@ export default function Home() {
         <div>
             <div className="container">
                 <h1 className='text-center display-4 text-orange fw-bolder mb-5'>Rick and Morty</h1>
-                <ProductSearch />
+                <CharacterSearch />
                 <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 my-5 ">
                     <img className='rounded img-fluid' src={require('../../img/banner.webp')} alt="Ricky-and-Martin" />
                     <div className="mt-5 fs-4">

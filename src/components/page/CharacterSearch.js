@@ -4,7 +4,7 @@ import '../../style.css'
 //icons
 import { AiOutlineSearch, AiOutlineCloseCircle } from 'react-icons/ai'
 
-function ProductSearch(props) {
+function CharacterSearch(props) {
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -52,4 +52,4 @@ function ProductSearch(props) {
     );
 }
 
-export default ProductSearch;
+export default CharacterSearch;

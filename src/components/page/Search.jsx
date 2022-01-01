@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
-import ProductSearch from "./ProductSearch"
+import CharacterSearch from "./CharacterSearch"
 import CharacterCard from "../base/CharacterCard"
 import BASE_URL from "../../api"
 
@@ -22,7 +22,7 @@ const Search = () => {
     }, [search])
 
     return <>
-        <ProductSearch />
+        <CharacterSearch />
         {(searchCharacter.length && !search ) && <div className="container my-5">
             <div className="alert alert-warning" role="alert">
                 <h2>There is no item about "{search}" try again</h2>
