@@ -2,7 +2,7 @@ import Home from './components/page/Home';
 import ProductDetail from './components/page/ProductDetail';
 import Products from './components/page/Products';
 import About from './components/page/About';
-import ProductSearch from './components/page/ProductSearch';
+import Search from './components/page/Search';
 
 const routes = [
     { title: 'Home', path: '/', element: Home, isNav: true },
@@ -14,7 +14,7 @@ const routes = [
         element: ProductDetail,
         isNav: false,
     },
-    { title: 'Character Search', path: 'search', element: ProductSearch, isNav: false },
+    { title: 'Character Search', path: 'search', element: Search, isNav: true },
 ];
 
 export default routes;

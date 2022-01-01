@@ -25,3 +25,8 @@ body {
 .rounded-5 {
   border-radius: 15px;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
