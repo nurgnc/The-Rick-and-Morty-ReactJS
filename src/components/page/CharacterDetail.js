@@ -43,9 +43,9 @@ export default function CharacterDetail() {
 
     const setGender = () => {
         if(products.gender === "Female") {
-            return <BsGenderFemale />
+            return <BsGenderFemale className='me-2'/>
         } else {
-            return <BsGenderMale />
+            return <BsGenderMale className='me-2'/>
         }
     }
 
@@ -60,36 +60,36 @@ export default function CharacterDetail() {
 
     
     return (
-        <>
-            <div className="col-12 row row-cols-3 row-cols-md-2 row-cols-lg-4 g-5">
-                <div className="character-image col-sm-12 col-md-6 col-lg-4">
-                    <img src={products.image} className='rounded shadow img-fluid' alt={products.name} />
+        <div className="container">
+            <div className="row my-5">
+                <div className="character-image col-md-12 col-lg-6 mb-5">
+                    <img src={products.image} className='rounded shadow h-575 w-100' alt={products.name} />
                 </div>
-                <div className="character-info col-sm-12 col-md-6 col-lg-8">
-                    <h3 className='text-orange fw-bold mb-3'>{products.name}</h3>
+                <div className="character-info col-md-12 col-lg-5 ms-5">
+                    <h1 className='text-orange fw-bold mb-5 display-4'>{products.name}</h1>
                     <div className='d-flex flex-row'>
-                        <div className={'species px-2 py-1 rounded' + setStatus()}>
+                        <div className={'d-flex flex-row align-items-center px-2 py-1 rounded fs-5' + setStatus()}>
                             <BsFillRecordFill /> 
                             {products.status}                        
                         </div>
-                        <div className="species ms-4 px-2 py-1 rounded bg-success text-light">
+                        <div className="species d-flex flex-row align-items-center ms-4 px-2 py-1 rounded fs-5 bg-success text-light">
                         {setSpecies()}
                         {products.species}
                         </div>
                     </div>
-                    <p className=" my-3">
+                    <p className="fs-4 d-flex flex-row align-items-center my-4">
                         {setGender()}
                         {products.gender}
                     </p>
-                    <p className="mb-3">
-                        <HiLocationMarker />
+                    <p className="fs-4 mb-5 d-flex flex-row align-items-center">
+                        <HiLocationMarker className='me-2'/>
                             {products?.location?.name}
                     </p>
                     <div className="dropdown">
-                        <button className="btn btn-dark text-light w-25 d-flex flex-row justify-content-between align-items-center dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button className="btn btn-dark text-light w-50 fs-5 d-flex flex-row justify-content-between align-items-center dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Episodes
                         </button>
-                        <ul className="dropdown-menu w-25 bg-dark" aria-labelledby="dropdownMenuButton1">
+                        <ul className="dropdown-menu w-50 bg-dark" aria-labelledby="dropdownMenuButton1">
                         {
                             episodeArr?.map((item, index)=> (
                                 <li className="dropdown-item" key={index}>
@@ -103,6 +103,6 @@ export default function CharacterDetail() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

@@ -44,10 +44,10 @@ function Characters(props) {
     }
     return (
         <div className="container-fluid">
-            <table class="table text-center">
+            <table class="table text-center fs-4">
                 <thead>
-                    <tr >
-                        <th scope="col"></th>
+                    <tr className=''>
+                        <th scope="col">İmage</th>
                         <th scope="col">Name</th>
                         <th scope="col">Status</th>
                         <th scope="col">Species</th>

@@ -23,14 +23,14 @@ const Search = () => {
 
     return <>
         <ProductSearch />
-        {(searchCharacter.length && !search == null) && <div className="container my-5">
+        {(searchCharacter.length && !search ) && <div className="container my-5">
             <div className="alert alert-warning" role="alert">
                 <h2>There is no item about "{search}" try again</h2>
             </div>
         </div>}
 
         <div className="container">
-            <div className="row row-cols-xs-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
+            <div className="row row-cols-xs-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
                 {
                     searchCharacter
                         .filter(character => character.name.toLowerCase().includes(search))
