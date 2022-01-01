@@ -3,7 +3,7 @@ import BASE_URL from '../../api'
 import ProductSearch from './ProductSearch'
 import { Link } from 'react-router-dom';
 import '../../style.css'
-import ProductCard from '../base/ProductCard';
+import CharacterCard from '../base/CharacterCard';
 
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
                         characters
                             .slice(0, size)
                             .map(item => (
-                                <ProductCard
+                                <CharacterCard
                                     id={item.id}
                                     image={item.image}
                                     name={item.name}

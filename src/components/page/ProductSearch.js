@@ -33,7 +33,7 @@ function ProductSearch(props) {
                 <div className="mb-5 d-flex flex-row border p-2 rounded-5 shadow">
                     <input
                         name="q"
-                        type="search"
+                        type="text"
                         className="form-control border-0 clear"
                         id="search"
                         defaultValue={UrlQ}

@@ -7,7 +7,7 @@ import { GiPerson } from 'react-icons/gi';
 import { BsFillRecordFill } from 'react-icons/bs'
 import { RiAliensFill } from 'react-icons/ri'
 
-function Products(props) {
+function Characters(props) {
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -74,4 +74,4 @@ function Products(props) {
     );
 }
 
-export default Products;
+export default Characters;

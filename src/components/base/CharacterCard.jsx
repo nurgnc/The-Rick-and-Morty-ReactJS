@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function ProductCard(props) {
+export default function CharacterCard(props) {
     return (
         <div key={props.id} className="col">
             <div className="card card-min-height shadow">

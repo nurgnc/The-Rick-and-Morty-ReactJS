@@ -8,7 +8,7 @@ import { RiAliensFill } from 'react-icons/ri'
 import {HiLocationMarker} from 'react-icons/hi'
 
 
-export default function ProductDetail() {
+export default function CharacterDetail() {
     const params = useParams();
 
     const [products, setProducts] = useState([]);
