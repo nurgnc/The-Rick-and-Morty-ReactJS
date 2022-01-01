@@ -3,13 +3,12 @@ import { useLocation } from "react-router-dom"
 import CharacterSearch from "./CharacterSearch"
 import CharacterCard from "../base/CharacterCard"
 import BASE_URL from "../../api"
-
+import {RiErrorWarningLine} from 'react-icons/ri'
 const Search = () => {
     const location = useLocation()
     const urlParams = new URLSearchParams(location.search)
     const search = urlParams.get("q")
     const [searchCharacter, setSearchCharacter] = useState([])
-    console.log("search:", search)
 
 
     useEffect(() => {
@@ -24,8 +23,9 @@ const Search = () => {
     return <>
         <CharacterSearch />
         {(searchCharacter.length && !search ) && <div className="container my-5">
-            <div className="alert alert-warning" role="alert">
-                <h2>There is no item about "{search}" try again</h2>
+            <div className="alert d-flex flex-row" role="alert">
+                <RiErrorWarningLine size={35} color="red" className="me-3" />
+                <h2>There is no item...</h2>
             </div>
         </div>}
 

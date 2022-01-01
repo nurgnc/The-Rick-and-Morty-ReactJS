@@ -25,29 +25,30 @@ function CharacterSearch(props) {
         }
     }, [location, UrlQ])
 
-    const results = <h4 className='text-orange'>Search : {UrlQ} </h4>;
+    const results = <h4 className='text-orange fw-bold fs-3'>Search character: "{UrlQ}" </h4>;
 
     return (
         <>
             <form onSubmit={formHandler}>
-                <div className="mb-5 d-flex flex-row border p-2 rounded-5 shadow">
+                <div className="mb-5 d-flex flex-row border px-2 py-3 rounded-5 shadow">
                     <input
                         name="q"
                         type="text"
                         className="form-control border-0 clear"
                         id="search"
                         defaultValue={UrlQ}
+                        placeholder='Search character...'
                     />
                     <button type="submit" className="btn">
-                        <AiOutlineSearch className='text-orange fw-bolder' size={23} />
+                        <AiOutlineSearch className='text-orange fw-bolder' size={25} />
                     </button>
                     <button type="reset" className="btn">
-                        <AiOutlineCloseCircle className='text-orange fw-bolder' size={23} />
+                        <AiOutlineCloseCircle className='text-orange fw-bolder' size={25} />
                     </button>
 
                 </div>
             </form>
-            {location.pathname === '/search' && results}
+            {UrlQ && results}
         </>
     );
 }

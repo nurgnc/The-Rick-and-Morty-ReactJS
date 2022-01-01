@@ -1,8 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import BASE_URL from '../../api'
-import ProductSearch from './ProductSearch'
-import { Link } from 'react-router-dom';
-import '../../style.css'
 import { GiHand } from 'react-icons/gi'
 
 export default function About() {
@@ -14,10 +9,10 @@ export default function About() {
                         <img src={require('../../img/alien.jpg')} alt="alien" />
                     </div>
                     <div className="text ">
-                        <h1 className='display-2'>Hello World <GiHand color='brown' /></h1>
+                        <h1 className='display-2 fw-bold'>Hello World <GiHand color='brown' /></h1>
                     </div>
                 </div>
-                <div className="about fs-3">
+                <div className="about-project fs-3">
                     <p>This project includes the characters and features of the Rick and Morty series.</p>
                     <p>This is the API service I use: <a className='text-info' href="https://rickandmortyapi.com/">The Rick and Morty API</a></p>
                     <p>This assignment was built with React JS. My goal was to create a website using data from a public API service. </p>
