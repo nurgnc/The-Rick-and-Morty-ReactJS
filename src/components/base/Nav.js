@@ -5,7 +5,7 @@ import "../../style.css";
 
 export default function Nav() {
     return (
-        <div className='bg-yellow'>
+        <div className='bg-yellow py-2'>
             <nav className="navbar px-5 navbar-expand-lg navbar-light ">
                     <Link to="/">
                         <img src={require('../../img/logo.png')} alt="logo" />

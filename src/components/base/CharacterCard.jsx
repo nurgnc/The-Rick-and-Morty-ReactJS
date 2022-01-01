@@ -10,7 +10,7 @@ export default function CharacterCard(props) {
                 </Link>
                 <div className="card-body">
                     <Link className="text-decoration-none" to={`/characters/${props.id}`}>
-                        <h5 className="card-title text-center text-info">{props.name}</h5>
+                        <h5 className="card-title text-center text-info fs-4">{props.name}</h5>
                     </Link>
                 </div>
             </div>

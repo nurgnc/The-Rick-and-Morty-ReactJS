@@ -23,7 +23,7 @@ function Characters(props) {
 
     const setSpecies = (item) => {
         if(item.species === "Alien") {
-            return <RiAliensFill size={25}/>
+            return <RiAliensFill size={25} color='blue'/>
         } else {
             return <GiPerson size={25}/>
         }
