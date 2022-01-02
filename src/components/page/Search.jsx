@@ -7,7 +7,7 @@ import {RiErrorWarningLine} from 'react-icons/ri'
 const Search = () => {
     const location = useLocation()
     const urlParams = new URLSearchParams(location.search)
-    const search = urlParams.get("q")
+    const search = urlParams.get("name")
     const [searchCharacter, setSearchCharacter] = useState([])
 
 
