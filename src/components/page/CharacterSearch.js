@@ -9,7 +9,7 @@ function CharacterSearch(props) {
     const navigate = useNavigate();
 
     const urlParams = new URLSearchParams(location.search);
-    const [UrlQ, setUrlQ] = useState(urlParams.get('q'));
+    const [UrlQ, setUrlQ] = useState(urlParams.get('name'));
 
     function formHandler(event) {
         event.preventDefault();
