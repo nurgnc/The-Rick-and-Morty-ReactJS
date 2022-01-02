@@ -14,7 +14,7 @@ const routes = [
         element: CharacterDetail,
         isNav: false,
     },
-    { title: 'Character Search', path: 'search', element: Search, isNav: true },
+    { title: 'Character Search', path: 'search', element: Search, isNav: false },
 ];
 
 export default routes;

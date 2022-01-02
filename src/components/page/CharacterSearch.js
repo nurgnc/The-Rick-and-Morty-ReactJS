@@ -13,14 +13,14 @@ function CharacterSearch(props) {
 
     function formHandler(event) {
         event.preventDefault();
-        const inputValue = event.target.q.value;
+        const inputValue = event.target.name.value;
         if (inputValue === "") return false
         setUrlQ(inputValue);
         navigate(`/search?name=${inputValue.toLowerCase()}`);
     }
 
     useEffect(() => {
-        if (location.search.length === 0) {
+        if (location?.search?.length === 0) {
             setUrlQ("")
         }
     }, [location, UrlQ])

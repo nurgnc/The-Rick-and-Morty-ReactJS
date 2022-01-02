@@ -39,6 +39,7 @@ export default function Home() {
                             .slice(0, size)
                             .map(item => (
                                 <CharacterCard
+                                    key={item.id}
                                     id={item.id}
                                     image={item.image}
                                     name={item.name}
