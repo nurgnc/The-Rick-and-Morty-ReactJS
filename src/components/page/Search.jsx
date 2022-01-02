@@ -12,7 +12,7 @@ const Search = () => {
 
 
     useEffect(() => {
-        fetch(`${BASE_URL}?title=${search}`)
+        fetch(`${BASE_URL}?name=${search}`)
             .then(res => res.json())
             .then(results => {
                 const data = results.results;
