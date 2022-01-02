@@ -16,7 +16,7 @@ function CharacterSearch(props) {
         const inputValue = event.target.q.value;
         if (inputValue === "") return false
         setUrlQ(inputValue);
-        navigate(`/search?q=${inputValue.toLowerCase()}`);
+        navigate(`/search?name=${inputValue.toLowerCase()}`);
     }
 
     useEffect(() => {
@@ -32,7 +32,7 @@ function CharacterSearch(props) {
             <form onSubmit={formHandler}>
                 <div className="mb-5 d-flex flex-row border px-2 py-3 rounded-5 shadow">
                     <input
-                        name="q"
+                        name="name"
                         type="text"
                         className="form-control border-0 clear"
                         id="search"
