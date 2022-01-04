@@ -23,7 +23,6 @@ export default function CharacterDetail() {
             }
         )
     })
-    console.log(products)
 
     const setStatus = () => {
         if (products.status === "Alive") {

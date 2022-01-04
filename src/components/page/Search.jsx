@@ -16,7 +16,6 @@ const Search = () => {
             .then(res => res.json())
             .then(results => {
                 const data = results.results;
-                console.log(data)
                 setSearchCharacter(data)
             })
     }, [search])

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+// api 
 import BASE_URL from '../../api'
+//style
 import '../../style.css'
+//components
+import Pagination from '../Pagination'
 //icons
 import { GiPerson } from 'react-icons/gi';
 import { BsFillRecordFill } from 'react-icons/bs'
@@ -9,7 +13,13 @@ import { RiAliensFill } from 'react-icons/ri'
 
 function Characters(props) {
     const [characters, setCharacters] = useState([]);
+    const [results, setResults] = useState();
     const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPage = results?.pages;
+
+    //change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     const setStatus = (item) => {
         if (item.status === "Alive") {
@@ -22,29 +32,33 @@ function Characters(props) {
     }
 
     const setSpecies = (item) => {
-        if(item.species === "Alien") {
-            return <RiAliensFill size={25} color='blue'/>
+        if (item.species === "Alien") {
+            return <RiAliensFill size={25} color='blue' />
         } else {
-            return <GiPerson size={25}/>
+            return <GiPerson size={25} />
         }
     }
 
     useEffect(() => {
-        fetch(`${BASE_URL}`)
-            .then((response) => response.json())
-            .then(results => {
-                const data = results.results;
-                setLoading(false);
-                setCharacters(data);
-            });
-    }, []);
+        const fetchCharacters = () => {
+            fetch(`${BASE_URL}?page=${currentPage}`)
+                .then((response) => response.json())
+                .then(results => {
+                    const data = results.results;
+                    setResults(results.info)
+                    setLoading(false);
+                    setCharacters(data);
+                });
+        }
+        fetchCharacters()
+    }, [currentPage]);
 
     if (loading) {
-        return <h1>Yükleniyor...</h1>;
+        return <h1>Loading...</h1>;
     }
     return (
         <div className="container-fluid">
-            <table class="table text-center fs-4">
+            <table className="table text-center fs-4">
                 <thead>
                     <tr className=''>
                         <th scope="col">İmage</th>
@@ -60,7 +74,11 @@ function Characters(props) {
                                 <td className="w-25">
                                     <img src={item.image} className="avatar img-avatar" alt={item.name} />
                                 </td>
-                                <td><Link className="text-decoration-none fw-bold text-info" to={`${item.id}`}>{item.name}</Link></td>
+                                <td>
+                                    <Link className="text-decoration-none fw-bold text-info" to={`${item.id}`}>
+                                        {item.name}
+                                    </Link>
+                                </td>
                                 <td className={setStatus(item)}>
                                     <BsFillRecordFill className={setStatus(item)} />
                                     {item.status}</td>
@@ -70,6 +88,7 @@ function Characters(props) {
                     }
                 </tbody>
             </table>
+            <Pagination totalPage={totalPage} paginate={paginate} />
         </div>
     );
 }
