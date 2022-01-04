@@ -85,7 +85,7 @@ export default function CharacterDetail() {
                     </p>
                     <p className="fs-4 mb-5 d-flex flex-row align-items-center flex-wrap">
                         <HiLocationMarker className='me-2' /> <span className="me-2">Last known location: </span>
-                        <a className='text-info text-decoration-none fw-bold' href={products?.location?.url}>
+                        <a className='text-info text-decoration-none fw-bold' href={products?.location?.url} target="_blank">
                             {products?.location?.name}
                         </a>
                     </p>
