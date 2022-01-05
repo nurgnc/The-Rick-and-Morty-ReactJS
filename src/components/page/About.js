@@ -32,6 +32,7 @@ export default function About() {
                         <li>React Router Dom</li>
                         <li>Bootstrap 5</li>
                         <li>Public API</li>
+                        <li>Custom Pagination</li>
                     </ul>
                 </div>
             </div>
