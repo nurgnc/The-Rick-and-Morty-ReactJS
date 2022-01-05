@@ -11,12 +11,18 @@ import { GiPerson } from 'react-icons/gi';
 import { BsFillRecordFill } from 'react-icons/bs'
 import { RiAliensFill } from 'react-icons/ri'
 
-function Characters(props) {
+function Characters({ }) {
     const [characters, setCharacters] = useState([]);
     const [results, setResults] = useState();
     const [loading, setLoading] = useState(true);
-    const [currentPage, setCurrentPage] = useState(1);
     const totalPage = results?.pages;
+    const pageNumbers = [];
+    const [currentPage, setCurrentPage] = useState(pageNumbers[0]);
+
+
+    for (let i = 1; i <= totalPage; i++) {
+        pageNumbers.push(i);
+    }
 
     //change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
@@ -51,7 +57,7 @@ function Characters(props) {
                 });
         }
         fetchCharacters()
-    }, [currentPage]);
+    }, [ ,currentPage]);
 
     if (loading) {
         return <h1>Loading...</h1>;
@@ -88,7 +94,12 @@ function Characters(props) {
                     }
                 </tbody>
             </table>
-            <Pagination totalPage={totalPage} paginate={paginate} />
+            <Pagination
+                pageNumbers={pageNumbers}
+                totalPage={totalPage}
+                paginate={paginate}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage} />
         </div>
     );
 }
