@@ -30,7 +30,7 @@ const Search = () => {
         <div className="container my-5">
           <div className="alert d-flex flex-row" role="alert">
             <RiErrorWarningLine size={35} color="red" className="me-3" />
-            <h2>There is no item...</h2>
+            <h2>There is no such character...</h2>
           </div>
         </div>
       </>
