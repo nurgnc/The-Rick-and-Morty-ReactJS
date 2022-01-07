@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+//components
 import CharacterSearch from "./CharacterSearch";
 import CharacterCard from "../base/CharacterCard";
+//api
 import BASE_URL from "../../api";
+//icons
 import { RiErrorWarningLine } from "react-icons/ri";
+
 const Search = () => {
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);
   const search = urlParams.get("name");
   const [searchCharacter, setSearchCharacter] = useState([]);
-
-  console.log(searchCharacter);
 
   useEffect(() => {
     fetch(`${BASE_URL}/?name=${search}`)
@@ -40,7 +42,6 @@ const Search = () => {
   return (
     <>
       <CharacterSearch />
-
       <div className="container">
         <div className="row row-cols-xs-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
           {searchCharacter
@@ -62,4 +63,5 @@ const Search = () => {
     </>
   );
 };
+
 export default Search;
