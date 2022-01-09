@@ -1,6 +1,6 @@
 # The-Rick-and-Morty-ReactJS
 This project includes the characters and features of the Rick and Morty series. <br>
-Project Link: https://the-rick-and-marty.netlify.app/ <br>
+Project Link: the-rick-and-morty-series.netlify.app <br>
 This is the API service I use: https://rickandmortyapi.com/
 
 This assignment was built with React JS. My goal was to create a website using data from a public API service.
