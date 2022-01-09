@@ -17,7 +17,7 @@ function Characters({}) {
   const [loading, setLoading] = useState(true);
   const totalPage = results?.pages;
   const pageNumbers = [];
-  const [currentPage, setCurrentPage] = useState(pageNumbers[0]);
+  const [currentPage, setCurrentPage] = useState();
 
   for (let i = 1; i <= totalPage; i++) {
     pageNumbers.push(i);
@@ -45,17 +45,14 @@ function Characters({}) {
   };
 
   useEffect(() => {
-    const fetchCharacters = () => {
-      fetch(`${BASE_URL}?page=${currentPage}`)
-        .then((response) => response.json())
-        .then((results) => {
-          const data = results.results;
-          setResults(results.info);
-          setLoading(false);
-          setCharacters(data);
-        });
-    };
-    fetchCharacters();
+    fetch(`${BASE_URL}?page=${currentPage}`)
+      .then((response) => response.json())
+      .then((results) => {
+        const data = results.results;
+        setResults(results.info);
+        setLoading(false);
+        setCharacters(data);
+      });
   }, [currentPage]);
 
   if (loading) {
