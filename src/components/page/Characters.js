@@ -11,13 +11,15 @@ import { GiPerson } from "react-icons/gi";
 import { BsFillRecordFill } from "react-icons/bs";
 import { RiAliensFill } from "react-icons/ri";
 
+const loadingGif = require("../../img/loading.gif");
+
 function Characters({}) {
   const [characters, setCharacters] = useState([]);
   const [results, setResults] = useState();
   const [loading, setLoading] = useState(true);
   const totalPage = results?.pages;
   const pageNumbers = [];
-  const [currentPage, setCurrentPage] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
 
   for (let i = 1; i <= totalPage; i++) {
     pageNumbers.push(i);
@@ -31,17 +33,16 @@ function Characters({}) {
       return "text-success mx-1";
     } else if (item.status === "unknown") {
       return "text-warning mx-1";
-    } else {
-      return "text-danger mx-1";
     }
+    return "text-danger mx-1";
   };
 
   const setSpecies = (item) => {
+    const size = 25;
     if (item.species === "Alien") {
-      return <RiAliensFill size={25} color="blue" />;
-    } else {
-      return <GiPerson size={25} />;
+      return <RiAliensFill size={size} color="blue" />;
     }
+    return <GiPerson size={size} />;
   };
 
   useEffect(() => {
@@ -56,7 +57,7 @@ function Characters({}) {
   }, [currentPage]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <img src={loadingGif} alt="loading..." className="rounded-circle" />;
   }
   return (
     <div className="container-fluid">
@@ -101,7 +102,6 @@ function Characters({}) {
         totalPage={totalPage}
         paginate={paginate}
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
       />
     </div>
   );

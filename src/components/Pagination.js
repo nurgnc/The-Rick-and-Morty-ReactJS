@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Pagination = ({
-  pageNumbers,
-  totalPage,
-  paginate,
-  currentPage,
-  setCurrentPage,
-}) => {
+const Pagination = ({ pageNumbers, totalPage, paginate, currentPage }) => {
   const [pageNumberLimit, setpageNumberLimit] = useState(5);
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
@@ -32,13 +26,12 @@ const Pagination = ({
           </Link>
         </li>
       );
-    } else {
-      return null;
     }
+    return null;
   });
 
   const handleNextBtn = () => {
-    setCurrentPage(currentPage + 1);
+    paginate(currentPage + 1);
 
     if (currentPage + 1 > maxPageNumberLimit) {
       setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
@@ -46,7 +39,7 @@ const Pagination = ({
     }
   };
   const handlePrevBtn = () => {
-    setCurrentPage(currentPage - 1);
+    paginate(currentPage - 1);
 
     if ((currentPage - 1) % pageNumberLimit == 0) {
       setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
@@ -65,7 +58,7 @@ const Pagination = ({
           <Link
             onClick={handlePrevBtn}
             class="page-link"
-            to={`?page=${currentPage}`}
+            to={`?page=${currentPage - 1}`}
           >
             Prev
           </Link>
@@ -80,7 +73,7 @@ const Pagination = ({
           <Link
             onClick={handleNextBtn}
             class="page-link"
-            to={`?page=${currentPage}`}
+            to={`?page=${currentPage + 1}`}
           >
             Next
           </Link>
