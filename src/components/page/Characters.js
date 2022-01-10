@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // api
 import BASE_URL from "../../api";
 //style
@@ -14,12 +14,13 @@ import { RiAliensFill } from "react-icons/ri";
 const loadingGif = require("../../img/loading.gif");
 
 function Characters({}) {
+  const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [results, setResults] = useState();
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
   const totalPage = results?.pages;
   const pageNumbers = [];
-  const [currentPage, setCurrentPage] = useState(1);
 
   for (let i = 1; i <= totalPage; i++) {
     pageNumbers.push(i);
@@ -44,6 +45,18 @@ function Characters({}) {
     }
     return <GiPerson size={size} />;
   };
+
+  useEffect(() => {
+    fetch(`${BASE_URL}?page=1`)
+      .then((response) => response.json())
+      .then((results) => {
+        const data = results.results;
+        setResults(results.info);
+        setLoading(false);
+        setCharacters(data);
+        navigate(`?page=1`);
+      });
+  }, []);
 
   useEffect(() => {
     fetch(`${BASE_URL}?page=${currentPage}`)
