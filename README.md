@@ -5,6 +5,8 @@ This is the API service I use: https://rickandmortyapi.com/
 
 This assignment was built with React JS. My goal was to create a website using data from a public API service.
 
+![](src/img/loading.gif)
+
 # Details :
 - Find details about the series and API on the main page, and you can search with the character name you want. <br/>
 - View the characters of the series on the characters page <br />
@@ -14,4 +16,7 @@ This assignment was built with React JS. My goal was to create a website using d
 - React Router Dom <br>
 - Bootstrap 5 <br>
 - Public API <br>
-- Custom Pagination
+- Custom Pagination <br>
+
+# Demo
+![](src/img/demo.gif)
